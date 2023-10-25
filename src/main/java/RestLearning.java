@@ -23,10 +23,10 @@ public class RestLearning {
             HttpClient httpClient = HttpClient.newHttpClient();
             //json response including id, status etc...
             HttpResponse<String> postResponse = httpClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
-            System.out.println(postResponse.body());
+            System.out.println(postResponse.body()); // just to show what the id is in terminal
             //GET
             transcript = gson.fromJson(postResponse.body(), Transcript.class);
-            System.out.println(transcript.getId());
+            System.out.println(transcript.getId()); // prints id separately
             HttpRequest getRequest = HttpRequest.newBuilder() //GET is default, could add .GET(HttpRequest...) after header if we wanted but not necessary
                     .uri(new URI("https://api.assemblyai.com/v2/transcript/" + transcript.getId()))
                     .header("Authorization", Constants.APIkey)
