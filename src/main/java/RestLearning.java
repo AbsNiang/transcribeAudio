@@ -10,7 +10,7 @@ public class RestLearning {
     public static void main(String[] args) {
         try {
             Transcript transcript = new Transcript();
-            transcript.setAudio_url("https://github.com/AbsNiang/AssemblyAIAPI/blob/main/Thirsty.mp4?raw=true");
+            transcript.setAudio_url("https://github.com/AbsNiang/transcribeAudioFile/blob/master/Thirsty.mp4?raw=true");
             Gson gson = new Gson(); //allows us to change the transcript object into json
             String jsonRequest = gson.toJson(transcript);
             //POST
